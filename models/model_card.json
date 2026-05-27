@@ -1,0 +1,30 @@
+{
+  "project": "ICU Patient Deterioration Early Warning",
+  "model_version": "1.0.0",
+  "alert_threshold": 0.25000000000000006,
+  "training_rows": 5100,
+  "validation_rows": 1700,
+  "test_rows": 1700,
+  "feature_count": 74,
+  "validation_report": {
+    "dropped_duplicates": 30,
+    "invalid_bmi_rows": 0,
+    "invalid_spo2_rows": 0,
+    "invalid_hr_rows": 0,
+    "invalid_map_rows": 388,
+    "invalid_potassium_rows": 0
+  },
+  "baselines": {
+    "sofa_roc_auc": 0.5520918314719478,
+    "news2_roc_auc": 0.5452968370514155
+  },
+  "best_model": {
+    "model_name": "logistic_regression",
+    "roc_auc": 0.6035577310790409,
+    "pr_auc": 0.233519133143461,
+    "recall": 0.5588235294117647,
+    "specificity": 0.6183644189383071,
+    "precision": 0.24324324324324326,
+    "threshold": 0.5
+  }
+}

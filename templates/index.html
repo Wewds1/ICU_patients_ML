@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICU Deterioration Risk</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">ICU Early Warning</p>
+      <h1>Patient Deterioration Risk</h1>
+      <p class="intro">
+        A simple black-and-white interface for scoring a single ICU observation against the deployed model.
+      </p>
+    </section>
+
+    <section class="layout">
+      <form id="prediction-form" class="panel form-panel">
+        <h2>Observation</h2>
+        <div class="grid">
+          <label>Age<input name="patient_age" type="number" value="67" required></label>
+          <label>Gender
+            <select name="gender">
+              <option>Female</option>
+              <option>Male</option>
+            </select>
+          </label>
+          <label>ICU Unit
+            <select name="icu_unit">
+              <option>Medical ICU</option>
+              <option>Surgical ICU</option>
+              <option>Cardiac ICU</option>
+              <option>Neuro ICU</option>
+              <option>Trauma ICU</option>
+            </select>
+          </label>
+          <label>Admission Type
+            <select name="admission_type">
+              <option>Emergency</option>
+              <option>Elective</option>
+              <option>Urgent</option>
+              <option>Transfer</option>
+            </select>
+          </label>
+          <label>Weight (kg)<input name="weight_kg" type="number" step="0.1" value="78.0" required></label>
+          <label>Height (cm)<input name="height_cm" type="number" step="0.1" value="170.0" required></label>
+          <label>BMI<input name="bmi" type="number" step="0.1" value="27.0" required></label>
+          <label>ICU LOS (days)<input name="icu_los_days_at_obs" type="number" step="0.1" value="2.0" required></label>
+          <label>Charlson Index<input name="charlson_index" type="number" value="3" required></label>
+          <label>HR Mean<input name="hr_mean" type="number" step="0.1" value="102.0" required></label>
+          <label>HR Min<input name="hr_min" type="number" step="0.1" value="84.0" required></label>
+          <label>HR Max<input name="hr_max" type="number" step="0.1" value="126.0" required></label>
+          <label>HR Std<input name="hr_std" type="number" step="0.1" value="12.5" required></label>
+          <label>SBP Mean<input name="sbp_mean" type="number" step="0.1" value="108.0" required></label>
+          <label>SBP Min<input name="sbp_min" type="number" step="0.1" value="88.0" required></label>
+          <label>SBP Max<input name="sbp_max" type="number" step="0.1" value="124.0" required></label>
+          <label>MAP Mean<input name="map_mean" type="number" step="0.1" value="74.0" required></label>
+          <label>MAP Min<input name="map_min" type="number" step="0.1" value="62.0" required></label>
+          <label>RR Mean<input name="rr_mean" type="number" step="0.1" value="26.0" required></label>
+          <label>RR Max<input name="rr_max" type="number" step="0.1" value="32.0" required></label>
+          <label>Temp Mean<input name="temp_mean" type="number" step="0.1" value="37.6" required></label>
+          <label>Temp Max<input name="temp_max" type="number" step="0.1" value="38.4" required></label>
+          <label>SpO2 Mean<input name="spo2_mean" type="number" step="0.1" value="94.0" required></label>
+          <label>SpO2 Min<input name="spo2_min" type="number" step="0.1" value="88.0" required></label>
+          <label>GCS Score<input name="gcs_score" type="number" step="0.1" value="9"></label>
+          <label>SOFA Score<input name="sofa_score" type="number" value="8" required></label>
+          <label>NEWS2 Score<input name="news2_score" type="number" value="9" required></label>
+          <label>Lactate<input name="lactate" type="number" step="0.1" value="2.8"></label>
+          <label>WBC<input name="wbc" type="number" step="0.1" value="12.4" required></label>
+          <label>Creatinine<input name="creatinine" type="number" step="0.1" value="1.8" required></label>
+          <label>Bilirubin<input name="bilirubin" type="number" step="0.1" value="1.2"></label>
+          <label>Platelet Count<input name="platelet_count" type="number" value="155" required></label>
+          <label>Sodium<input name="sodium" type="number" step="0.1" value="136.0" required></label>
+          <label>Potassium<input name="potassium" type="number" step="0.1" value="4.7" required></label>
+          <label>Hemoglobin<input name="hemoglobin" type="number" step="0.1" value="10.3" required></label>
+          <label>P/F Ratio<input name="pao2_fio2_ratio" type="number" step="0.1" value="210"></label>
+          <label>Fluid Balance 24h<input name="fluid_balance_24h" type="number" step="0.1" value="750"></label>
+          <label>Diabetes
+            <select name="has_diabetes"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>Hypertension
+            <select name="has_hypertension"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>Heart Failure
+            <select name="has_heart_failure"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>COPD
+            <select name="has_copd"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>CKD
+            <select name="has_ckd"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>Immunosuppression
+            <select name="has_immunosuppression"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>On Vasopressor
+            <select name="on_vasopressor"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>On Mechanical Ventilation
+            <select name="on_mechanical_vent"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+          <label>On RRT
+            <select name="on_rrt"><option value="0">0</option><option value="1">1</option></select>
+          </label>
+        </div>
+        <button type="submit">Run Prediction</button>
+      </form>
+
+      <aside class="panel result-panel">
+        <h2>Result</h2>
+        <div id="result-state" class="result-empty">Submit an observation to see the deployed risk score.</div>
+        <dl id="result-data" class="result-data hidden">
+          <div><dt>Probability</dt><dd id="probability">-</dd></div>
+          <div><dt>Alert</dt><dd id="alert">-</dd></div>
+          <div><dt>Threshold</dt><dd id="threshold">-</dd></div>
+          <div><dt>Risk Level</dt><dd id="risk-level">-</dd></div>
+          <div><dt>Model Version</dt><dd id="model-version">-</dd></div>
+        </dl>
+      </aside>
+    </section>
+  </main>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+

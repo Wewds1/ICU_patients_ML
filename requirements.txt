@@ -1,0 +1,17 @@
+pandas==3.0.3
+numpy==2.4.6
+scikit-learn==1.8.0
+imbalanced-learn==0.14.1
+xgboost==3.2.0
+shap==0.51.0
+matplotlib==3.10.9
+seaborn==0.13.2
+missingno==0.5.2
+jupyterlab==4.5.7
+fastapi==0.136.3
+uvicorn==0.48.0
+joblib==1.5.3
+pydantic==2.13.4
+httpx==0.28.1
+pytest==9.0.3
+
