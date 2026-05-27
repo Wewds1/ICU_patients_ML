@@ -38,14 +38,14 @@ The ML pipeline follows a clinically motivated structure:
 
 Core code:
 
-- [src/icu_risk/data.py](/D:/Projects/ICU_Patients/src/icu_risk/data.py)
-- [src/icu_risk/features/pipeline.py](/D:/Projects/ICU_Patients/src/icu_risk/features/pipeline.py)
-- [src/icu_risk/training/train.py](/D:/Projects/ICU_Patients/src/icu_risk/training/train.py)
-- [scripts/train_pipeline.py](/D:/Projects/ICU_Patients/scripts/train_pipeline.py)
+- [src/icu_risk/data.py]
+- [src/icu_risk/features/pipeline.py]
+- [src/icu_risk/training/train.py]
+- [scripts/train_pipeline.py]
 
 ### Dataset
 
-The raw dataset lives at [data/raw/icu_patients.csv](/D:/Projects/ICU_Patients/data/raw/icu_patients.csv). It contains 8,530 rows and 48 original columns. The pipeline identified and removed 30 duplicate rows, then exported a model-ready dataset to [data/processed/icu_patients_model_ready.csv](/D:/Projects/ICU_Patients/data/processed/icu_patients_model_ready.csv).
+The raw dataset lives at [data/raw/icu_patients.csv]. It contains 8,530 rows and 48 original columns. The pipeline identified and removed 30 duplicate rows, then exported a model-ready dataset to [data/processed/icu_patients_model_ready.csv]
 
 Important data characteristics:
 
@@ -82,13 +82,13 @@ Endpoints:
 
 Files:
 
-- [app.py](/D:/Projects/ICU_Patients/app.py)
-- [src/icu_risk/api/app.py](/D:/Projects/ICU_Patients/src/icu_risk/api/app.py)
-- [src/icu_risk/api/schemas.py](/D:/Projects/ICU_Patients/src/icu_risk/api/schemas.py)
+- [app.py]
+- [src/icu_risk/api/app.py]
+- [src/icu_risk/api/schemas.py]
 
 ### Saved model artifacts
 
-The deployment artifacts are in [models](/D:/Projects/ICU_Patients/models):
+The deployment artifacts are in [models]
 
 - `preprocessor.pkl`
 - `deterioration_model.pkl`
@@ -99,7 +99,7 @@ The `model_card.json` file records metadata such as the chosen threshold, train/
 
 ### Notebooks
 
-Documented notebooks are in [notebooks](/D:/Projects/ICU_Patients/notebooks):
+Documented notebooks are in [notebooks]
 
 - `01_eda.ipynb`
 - `02_feature_engineering.ipynb`
@@ -110,7 +110,7 @@ Each notebook includes markdown narrative so the project reads like a guided ana
 
 ## Current model results
 
-The generated metrics are stored in [data/processed/model_metrics.csv](/D:/Projects/ICU_Patients/data/processed/model_metrics.csv).
+The generated metrics are stored in [data/processed/model_metrics.csv]
 
 Summary from the latest run:
 
@@ -201,7 +201,7 @@ $env:PYTHONPATH='src'
 pytest
 ```
 
-Tests live in [tests](/D:/Projects/ICU_Patients/tests).
+Tests live in [tests].
 
 ## What I learned
 
@@ -224,6 +224,6 @@ The same approach transfers well to future work:
 
 ## Supporting notes
 
-- The original project brief was preserved as [scratch.md](/D:/Projects/ICU_Patients/scratch.md).
-- The repository ignores `scratch.md`, `venv/`, `__pycache__/`, and serialized model files through [.gitignore](/D:/Projects/ICU_Patients/.gitignore).
+- The original project brief was preserved as [scratch.md]
+- The repository ignores `scratch.md`, `venv/`, `__pycache__/`, and serialized model files through [.gitignore].
 
